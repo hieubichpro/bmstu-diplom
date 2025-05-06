@@ -1,0 +1,6 @@
+layer network
+https://www.arcsinus.ru/blog/neuronet-architecture
+picture
+https://wiki.loginom.ru/articles/multilayer-neural-net.html
+định nghĩa CNN
+https://blog.skillfactory.ru/gayd-po-rabote-svertochnyh-neyronnyh-setey/
