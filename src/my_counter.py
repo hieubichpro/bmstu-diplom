@@ -17,9 +17,10 @@ class MyObjectCounter:
         self.entering = set()
         self.exiting = set()
     def is_inside_polygon(self, point, polygon):
-        return cv2.pointPolygonTest(np.array(polygon, dtype=np.int32), point, False) >= 0
+        if polygon:
+            return cv2.pointPolygonTest(np.array(polygon, dtype=np.int32), point, False) >= 0
 
-    def process_frame(self, frame):
+    def process_frame(self, frame, test=False):
         results = self.model(frame, classes=self.classes, verbose=False)[0]
         detections = []
 
@@ -33,7 +34,7 @@ class MyObjectCounter:
             x3, y3, x4, y4, id = bbox
             x3, y3, x4, y4 = int(x3), int(y3), int(x4), int(y4)
             
-            x0, y0 = x3, y3
+            x0, y0 = x4, y4
             
             cx = int((x3 + x4) / 2)
             cy = int((y3 + y4) / 2)
@@ -50,8 +51,6 @@ class MyObjectCounter:
                 if self.is_inside_polygon((x0, y0), self.polygon2):
                     cv2.rectangle(frame, (x3, y3), (x4, y4), (0, 0, 0), 2)
                     cv2.circle(frame, (x0, y0 ), 5, (0, 0, 0), -1)
-                    # cv2.putText(frame, f'{id}', (x3, y3),
-                    #             cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0)  ,1)
                     self.entering.add(id)
 
 
@@ -63,8 +62,6 @@ class MyObjectCounter:
                 if self.is_inside_polygon((x0, y0), self.polygon1):
                     cv2.rectangle(frame, (x3, y3), (x4, y4), (255, 255, 0), 2)
                     cv2.circle(frame, (x0, y0 ), 5, (123, 123, 123), -1)
-                    # cv2.putText(frame, f'{id}', (x3, y3),
-                                # cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0)  ,1)
                     self.exiting.add(id)
             
         if self.polygon1:
@@ -78,6 +75,8 @@ class MyObjectCounter:
                     cv2.FONT_HERSHEY_SIMPLEX, 1.2, (0, 0, 255), 3)
         if self.show:
             cv2.imshow("MyObjectCounter", frame)
-
-        return frame
+        if test:
+            return len(bbox_id)
+        else:
+            return frame
 

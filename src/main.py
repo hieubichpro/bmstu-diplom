@@ -4,7 +4,7 @@ import numpy as np
 from PyQt5.QtWidgets import QApplication, QLabel, QMainWindow, QPushButton, QFileDialog, QVBoxLayout, QWidget, QHBoxLayout
 from PyQt5.QtCore import QTimer, Qt
 from PyQt5.QtGui import QImage, QPixmap
-from my_counter import MyObjectCounter  # ← đảm bảo bạn có class này sẵn
+from my_counter import MyObjectCounter 
 
 class VideoWindow(QMainWindow):
     def __init__(self):
@@ -19,27 +19,22 @@ class VideoWindow(QMainWindow):
         self.current_points = []
         self.file_path = ""
 
-        # QLabel hiển thị video
         self.video_label = QLabel()
         self.video_label.setFixedSize(self.fixed_width, self.fixed_height)
         self.video_label.setAlignment(Qt.AlignCenter)
         self.video_label.mousePressEvent = self.get_point
 
-        # Nút chọn video
         self.btn_select = QPushButton("Выбрать видео")
         self.btn_select.clicked.connect(self.open_file)
 
-        # Nút bắt đầu đếm
         self.btn_start_counting = QPushButton("Подсчитать")
         self.btn_start_counting.clicked.connect(self.myfunc)
         self.btn_start_counting.setEnabled(False)
 
-        # Nút xóa đa giác
         self.btn_remove_polygons = QPushButton("Удалить области")
         self.btn_remove_polygons.clicked.connect(self.remove_polygons)
         self.btn_remove_polygons.setEnabled(False)
 
-        # Layout
         layout = QVBoxLayout()
         layout.addWidget(self.video_label)
 
@@ -57,7 +52,7 @@ class VideoWindow(QMainWindow):
         self.timer.timeout.connect(self.update_frame)
 
     def open_file(self):
-        file_path, _ = QFileDialog.getOpenFileName(self, "Chọn video", "", "Video Files (*.mp4 *.avi)")
+        file_path, _ = QFileDialog.getOpenFileName(self, "Выбрать видео", "", "Тип видео (*.mp4 *.avi)")
         if file_path:
             self.cap = cv2.VideoCapture(file_path)
             self.polygons = []
@@ -76,19 +71,15 @@ class VideoWindow(QMainWindow):
             self.timer.stop()
             return
 
-        # Resize frame về đúng 1280x720
         frame = cv2.resize(frame, (self.fixed_width, self.fixed_height))
 
-        # Vẽ các đa giác đã hoàn tất
         for polygon in self.polygons:
             pts = [(p[0], p[1]) for p in polygon]
             cv2.polylines(frame, [np.array(pts, dtype=np.int32)], isClosed=True, color=(0, 255, 0), thickness=2)
 
-        # Vẽ các điểm hiện tại
         for p in self.current_points:
             cv2.circle(frame, (p[0], p[1]), 4, (0, 0, 255), -1)
 
-        # Hiển thị lên QLabel
         frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         h, w, ch = frame.shape
         qt_img = QImage(frame.data, w, h, ch * w, QImage.Format_RGB888)
@@ -96,29 +87,29 @@ class VideoWindow(QMainWindow):
 
     def get_point(self, event):
         if len(self.polygons) >= 2:
-            print("✅ Достаточно")
+            print("Достаточно")
             return
 
         pos = event.pos()
         x, y = pos.x(), pos.y()
         self.current_points.append([x, y])
-        print(f"➕ Выбранная точка: [{x}, {y}]")
+        print(f"Выбранная точка: [{x}, {y}]")
 
         if len(self.current_points) == 4:
             self.polygons.append(self.current_points.copy())
             self.current_points.clear()
-            print(f"✅ Выбранная область {len(self.polygons)}")
+            print(f"Выбранная область {len(self.polygons)}")
             self.btn_remove_polygons.setEnabled(True)
 
     def remove_polygons(self):
         self.polygons.clear()
         self.current_points.clear()
         self.btn_remove_polygons.setEnabled(False)
-        print("🗑️ Все области удалены.")
+        print("Все области удалены.")
 
     def myfunc(self):
         if len(self.polygons) < 2:
-            print("❌ Выбрать 2 области.")
+            print("Выбрать 2 области.")
             return
 
         cap = cv2.VideoCapture(self.file_path)
@@ -131,7 +122,7 @@ class VideoWindow(QMainWindow):
             show=True
         )
 
-        print("▶️ Начинает обработки видео. Нажать ESC для закрытия")
+        print("Начинает обработки видео. Нажать ESC для закрытия")
         while cap.isOpened():
             ret, frame = cap.read()
             if not ret:
