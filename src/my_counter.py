@@ -3,7 +3,6 @@ import numpy as np
 from ultralytics import YOLO
 from tracker import *
 
-
 class MyObjectCounter:
     def __init__(self, model_path="yolov8n.pt", polygon1=None, polygon2=None, classes=[0], show=True):
         self.model = YOLO(model_path)
@@ -34,10 +33,11 @@ class MyObjectCounter:
             x3, y3, x4, y4, id = bbox
             x3, y3, x4, y4 = int(x3), int(y3), int(x4), int(y4)
             
-            x0, y0 = x4, y4
             
             cx = int((x3 + x4) / 2)
             cy = int((y3 + y4) / 2)
+            
+            x0, y0 = cx, cy
 
             cv2.rectangle(frame, (x3, y3), (x4, y4), (125,125, 125), 2)
             cv2.putText(frame, f'{id}', (x3, y3),
@@ -76,7 +76,7 @@ class MyObjectCounter:
         if self.show:
             cv2.imshow("MyObjectCounter", frame)
         if test:
-            return len(bbox_id)
+            return len(self.entering)
         else:
             return frame
 

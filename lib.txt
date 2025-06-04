@@ -1,0 +1,190 @@
+@misc{findobject,
+    title={Computer Vision Tasks supported by Ultralytics},
+    howpublished={[Электронный ресурс].~--- Режим доступа:
+	\url{https://docs.ultralytics.com/tasks/} (дата обращения: 14.04.2024).}
+}
+
+@article{taskcount,
+  title={Подсчет количества людей в видеопоследовательности на основе детектора головы человека},
+  author={Конушин~А.~С. and Филиппов~И.~В and Кононов~В.~А},
+  journal={Программные продукты и системы},
+  number={1 (109)},
+  pages={121--126},
+  year={2015}
+}
+
+@article{compvision,
+  title={Компьютерное зрение как средство извлечения информации из видеоряда},
+  author={Манюкова, НВ},
+  journal={Математические структуры и моделирование},
+  number={4 (36)},
+  pages={123--128},
+  year={2015},
+  publisher={Федеральное государственное автономное образовательное учреждение высшего~…}
+}
+
+@article{noronseti,
+  title={Алгоритм формирования оптимальной архитектуры многослойной нейронной сети},
+  author={Татьянкин, Виталий Михайлович},
+  journal={Новое слово в науке: перспективы развития},
+  number={2},
+  pages={187--188},
+  year={2014},
+  publisher={Общество с ограниченной ответственностью Центр научного сотрудничества~…}
+}
+
+@misc{layers,
+    title={Как устроена нейронная сеть и зачем ей слои},
+    howpublished={[Электронный ресурс].~--- Режим доступа:
+	\url{https://www.arcsinus.ru/blog/neuronet-architecture} (дата обращения: 14.04.2024).}
+}
+
+@article{activation,
+  title={Activation functions in neural networks},
+  author={Sharma, Sagar and Sharma, Simone and Athaiya, Anidhya},
+  journal={Towards Data Sci},
+  volume={6},
+  number={12},
+  pages={310--316},
+  year={2017}
+}
+
+@misc{cnn,
+    title={Гайд по работе сверточных нейронных сетей},
+    howpublished={[Электронный ресурс].~--- Режим доступа:
+	\url{https://blog.skillfactory.ru/gayd-po-rabote-svertochnyh-neyronnyh-setey/} (дата обращения: 14.04.2024).}
+}
+
+@inproceedings{stages,
+  title={Обнаружение объектов на изображении с использованием машинного обучения},
+  author={Верхов, КА},
+  booktitle={Новые информационные технологии в научных исследованиях},
+  pages={226--227},
+  year={2020}
+}
+
+@misc{onestage,
+    title={One-Stage Object Detectors},
+    howpublished={[Электронный ресурс].~--- Режим доступа:
+	\url{https://www.ultralytics.com/glossary/one-stage-object-detectors} (дата обращения: 14.04.2024).}
+}
+
+@misc{twostage,
+    title={Two-Stage Object Detectors},
+    howpublished={[Электронный ресурс].~--- Режим доступа:
+	\url{https://www.ultralytics.com/glossary/two-stage-object-detectors} (дата обращения: 14.04.2024).}
+}
+
+@misc{yolo,
+    title={YOLO Algorithm: Real-Time Object Detection from A to Z},
+    howpublished={[Электронный ресурс].~--- Режим доступа:
+	\url{https://kili-technology.com/data-labeling/machine-learning/yolo-algorithm-real-time-object-detection-from-a-to-z} (дата обращения: 14.04.2024).}
+}
+
+@misc{yolov1,
+    title={YOLOv1},
+    howpublished={[Электронный ресурс].~--- Режим доступа:
+	\url{https://paperswithcode.com/method/yolov1} (дата обращения: 14.04.2024).}
+}
+
+@misc{yolov5,
+    title={What is YOLOv5? A Guide for Beginners.},
+    howpublished={[Электронный ресурс].~--- Режим доступа:
+	\url{https://blog.roboflow.com/yolov5-improvements-and-evaluation/} (дата обращения: 14.04.2024).}
+}
+
+@misc{yolov8,
+    title={YOLOv8 Architecture Explained: Exploring the YOLOv8 Architecture},
+    howpublished={[Электронный ресурс].~--- Режим доступа:
+	\url{https://yolov8.org/yolov8-architecture-explained/} (дата обращения: 14.04.2024).}
+}
+
+@acticle{ssd,
+  title={Object detection system based on SSD algorithm},
+  author={Shuai, Qianjun and Wu, Xingwen},
+  booktitle={2020 international conference on culture-oriented science \& technology (ICCST)},
+  pages={141--144},
+  year={2020},
+  organization={IEEE}
+}
+
+@article{ssd1,
+	title={DF-SSD: An improved SSD object detection algorithm based on DenseNet and feature fusion},
+	author={Zhai~Shang},
+      journal={IEEE access},
+      volume={8},
+      pages={24344--24357},
+      year={2020},
+      publisher={IEEE}
+}
+
+@misc{rcnn,
+    title={What is R-CNN?},
+    howpublished={[Электронный ресурс].~--- Режим доступа:
+	\url{https://blog.roboflow.com/what-is-r-cnn/} (дата обращения: 14.04.2024).}
+}
+
+@inproceedings{fastrcnn,
+  title={Fast r-cnn},
+  author={Girshick, Ross},
+  booktitle={Proceedings of the IEEE international conference on computer vision},
+  pages={1440--1448},
+  year={2015}
+}
+
+@article{maskrcnn,
+  title={Deep learning techniques—R-CNN to mask R-CNN: a survey},
+  author={Bharati and Ankita},
+  journal={Computational Intelligence in Pattern Recognition: Proceedings of CIPR 2019},
+  pages={657--668},
+  year={2020},
+  publisher={Springer}
+}
+
+@misc{vscode,
+    title={Visual Studio Code - Code Editing.},
+    howpublished={[Электронный ресурс].~--- Режим доступа:
+	\url{https://code.visualstudio.com/} (дата обращения: 14.04.2024).}
+}
+
+@misc{git,
+    title={Git},
+    howpublished={[Электронный ресурс].~--- Режим доступа:
+	\url{https://git-scm.com/} (дата обращения: 14.04.2024).}
+}
+
+@misc{python,
+    title={The Python Tutorial},
+    howpublished={[Электронный ресурс].~--- Режим доступа:
+	\url{https://www.python.org/} (дата обращения: 14.04.2024).}
+}
+
+@misc{opencv,
+    title={OpenCV - Open Computer Vision Library},
+    howpublished={[Электронный ресурс].~--- Режим доступа:
+	\url{https://opencv.org/} (дата обращения: 14.04.2024).}
+}
+
+@misc{pyqt5,
+    title={PyQt5 Tutorial 2025, Create Python GUIs with Qt},
+    howpublished={[Электронный ресурс].~--- Режим доступа:
+	\url{https://www.pythonguis.com/pyqt5-tutorial/} (дата обращения: 14.04.2024).}
+}
+
+@misc{venv,
+    title={Как создать виртуальное окружение Python},
+    howpublished={[Электронный ресурс].~--- Режим доступа:
+	\url{https://sky.pro/media/kak-sozdat-virtualnoe-okruzhenie-python/} (дата обращения: 14.04.2024).}
+}
+
+@misc{cocoset,
+    title={MS COCO (Microsoft Common Objects in Context)},
+    howpublished={[Электронный ресурс].~--- Режим доступа:
+	\url{https://paperswithcode.com/dataset/coco} (дата обращения: 14.04.2024).}
+}
+
+@misc{compareyolo,
+    title={YOLOv8 vs YOLOv5 A Detailed Comparison},
+    howpublished={[Электронный ресурс].~--- Режим доступа:
+	\url{https://docs.ultralytics.com/compare/yolov8-vs-yolov5/} (дата обращения: 14.04.2024).}
+}

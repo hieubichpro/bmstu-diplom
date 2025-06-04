@@ -52,7 +52,7 @@ class VideoWindow(QMainWindow):
         self.timer.timeout.connect(self.update_frame)
 
     def open_file(self):
-        file_path, _ = QFileDialog.getOpenFileName(self, "Выбрать видео", "", "Тип видео (*.mp4 *.avi)")
+        file_path, _ = QFileDialog.getOpenFileName(self, "Выбрать видео", "", "Тип видео (*.mp4 *.avi, *.mov)")
         if file_path:
             self.cap = cv2.VideoCapture(file_path)
             self.polygons = []
@@ -116,7 +116,7 @@ class VideoWindow(QMainWindow):
         assert cap.isOpened()
 
         counter = MyObjectCounter(
-            model_path="yolov8n.pt",
+            model_path="best1.pt",
             polygon1=self.polygons[0],
             polygon2=self.polygons[1],
             show=True

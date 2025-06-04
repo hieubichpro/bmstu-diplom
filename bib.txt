@@ -4,3 +4,7 @@ picture
 https://wiki.loginom.ru/articles/multilayer-neural-net.html
 định nghĩa CNN
 https://blog.skillfactory.ru/gayd-po-rabote-svertochnyh-neyronnyh-setey/
+compare yolo ssd
+https://medium.com/@elvenkim1/ssd-vs-zsd-vs-yolo-55a4b4b8188d
+Rcnn
+https://towardsdev.com/r-cnn-fast-r-cnn-faster-r-cnn-and-mask-r-cnn-e7cd2e6f0a82
